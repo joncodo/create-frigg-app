@@ -1,9 +1,9 @@
 {
     "name": "sharepoint",
-    "label": "SharePoint",
-    "productUrl": "https://sharepoint.com",
-    "apiDocs": "https://developers.sharepoint.com",
-    "logoUrl": "https://friggframework.org/assets/img/sharepoint.jpeg",
-    "categories": ["Marketing", "Sales", "CMS", "Marketing Automation"],
-    "description": "SharePoint is a MSFT application"
+    "label": "Salesforce",
+    "productUrl": "https://salesforce.com",
+    "apiDocs": "https://developer.salesforce.com",
+    "logoUrl": "https://friggframework.org/assets/img/salesforce.jpeg",
+    "categories": ["Marketing", "Sales", "CMS", "Marketing Automation", "CRM"],
+    "description": "Salesforce is the world’s #1 customer relationship management (CRM) platform. We help your marketing, sales, commerce, service and IT teams work as one from anywhere — so you can keep your customers happy everywhere."
 }

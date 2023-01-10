@@ -13,7 +13,7 @@ class Manager extends ModuleManager {
     static Credential = Credential;
 
     constructor(params) {
-        console.log('JON >>> you are making a module manager for sharepoint');
+        console.log('JON >>> you are making a module manager for sharepoint')
         super(params);
     }
 

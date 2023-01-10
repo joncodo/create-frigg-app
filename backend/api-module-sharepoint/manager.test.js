@@ -1,17 +1,26 @@
-const { Api } = require('./api');
+const Manager = require('./manager');
+const mongoose = require('mongoose');
 const config = require('./defaultConfig.json');
 
-describe(`Should fully test the ${config.label} Api Class`, () => {
-    let api;
+describe(`Should fully test the ${config.label} Manager`, () => {
+    let manager, userManager;
+
     beforeAll(async () => {
-        api = new Api({});
+        await mongoose.connect(process.env.MONGO_URI);
+        manager = await Manager.getInstance({
+            userId: new mongoose.Types.ObjectId(),
+        });
     });
 
-    afterAll(async () => {});
+    afterAll(async () => {
+        await Manager.Credential.deleteMany();
+        await Manager.Entity.deleteMany();
+        await mongoose.disconnect();
+    });
 
-    it('should return authUrl requirements', async () => {
-        const url = await api.getAuthUri();
-        expect(url).exists;
-        console.log(url);
+    it('should return auth requirements', async () => {
+        const requirements = await manager.getAuthorizationRequirements();
+        expect(requirements).exists;
+        expect(requirements.type).toEqual('oauth2');
     });
 });
