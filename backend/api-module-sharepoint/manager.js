@@ -82,7 +82,6 @@ class Manager extends ModuleManager {
         // TODO: update this so we can find users that are sharepoint users
         const portalId = get(params, 'portalId');
         const domainName = get(params, 'domainName');
-        console.log('JON >>> 3', 3);
 
         const search = await Entity.find({
             user: this.userId,

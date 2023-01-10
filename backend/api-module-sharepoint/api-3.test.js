@@ -29,11 +29,7 @@ describe('SharePoint API ', () => {
     // this.timeout(20000);
     let hsManager;
     beforeAll(async () => {
-        console.log('JON >>> process.env', process.env.MONGO_URI);
-
         await mongoose.connect(process.env.MONGO_URI);
-        console.log('JON >>> 2', 2);
-
         this.userManager = await UserManager.createIndividualUser(
             loginCredentials
         );

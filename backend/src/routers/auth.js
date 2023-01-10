@@ -11,6 +11,7 @@ const { debug } = require('@friggframework/logs');
 
 // Check the entity type is valid, and get an instance for the current user.
 const getEntityFromType = async (req, entityType) => {
+    console.log('JON >>> entityType', entityType)
     if (!EntityManager.checkIsValidType(entityType)) {
         throw Boom.badRequest(
             `Error: Invalid entity type of ${entityType}, options are ${EntityManager.entityTypes.join(

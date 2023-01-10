@@ -2,7 +2,7 @@ const { ModuleManager, Entity } = require('@friggframework/module-plugin');
 const primaryEntity = require('./ConnectWiseManager');
 const salesforceEntity = require('./SalesforceManager');
 const hubspotEntity = require('./HubSpotManager');
-const sharepointEntity = require('./SharePointManager');
+const sharePointEntity = require('./SharePointManager');
 
 class EntityManager {
     static primaryEntityClass = primaryEntity;
@@ -11,7 +11,7 @@ class EntityManager {
         primaryEntity,
         salesforceEntity,
         hubspotEntity,
-        sharepointEntity,
+        sharePointEntity,
     ];
 
     static entityTypes = EntityManager.entityManagerClasses.map(
@@ -40,6 +40,8 @@ class EntityManager {
 
         const indexOfEntityType =
             EntityManager.entityTypes.indexOf(normalizedType);
+        console.log('JON >>> indexOfEntityType', indexOfEntityType);
+
         if (!EntityManager.checkIsValidType(normalizedType)) {
             throw new Error(
                 `Error: Invalid entity type of ${normalizedType}, options are ${EntityManager.entityTypes.join(
@@ -48,11 +50,20 @@ class EntityManager {
             );
         }
 
+        console.log('JON >>> EntityManager.entityManagerClasses', EntityManager.entityManagerClasses)
         const managerClass =
             EntityManager.entityManagerClasses[indexOfEntityType];
 
+
+        console.log(
+                'JON >>> managerClass.prototype',
+                managerClass.prototype
+            );
+
+        console.log('JON >>> managerClass.prototype instanceof ModuleManager', managerClass.prototype instanceof ModuleManager)
+
         if (!(managerClass.prototype instanceof ModuleManager)) {
-            throw new Error('The Entity is not an instance of ModuleManager');
+            throw new Error('The Entity is not an instance of ModuleManager: ', entityType);
         }
 
         return managerClass;
