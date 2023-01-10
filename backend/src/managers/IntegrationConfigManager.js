@@ -9,17 +9,17 @@ class IntegrationConfigManager {
     constructor(params) {
         this.primary = ConnectWiseManager;
         this.options = [
-            // new Options({
-            //     module: SharePointManager,
-            //     integrations: [ConnectWiseManager],
-            //     display: {
-            //         name: 'SharePoint',
-            //         description: 'Company SharePoint',
-            //         category: 'My New Category',
-            //         detailsUrl: 'https://sharepoint.com',
-            //         icon: 'https://friggframework.org/assets/img/sharepoint.jpeg',
-            //     },
-            // }),
+            new Options({
+                module: SharePointManager,
+                integrations: [ConnectWiseManager],
+                display: {
+                    name: 'SharePoint',
+                    description: 'Company SharePoint',
+                    category: 'My New Category',
+                    detailsUrl: 'https://sharepoint.com',
+                    icon: 'https://friggframework.org/assets/img/sharepoint.jpeg',
+                },
+            }),
             new Options({
                 module: SalesforceManager,
                 integrations: [ConnectWiseManager],

@@ -1,11 +1,13 @@
 const { IntegrationManager: Parent } = require('@friggframework/integrations');
 const EntityManager = require('../entities/EntityManager');
 
-const salesforceIntegrationManager = require('./SharePointIntegrationManager');
+const salesforceIntegrationManager = require('./SalesforceIntegrationManager');
+const sharepointIntegrationManager = require('./SharePointIntegrationManager');
 
 class IntegrationManager extends Parent {
     static integrationManagerClasses = [
         salesforceIntegrationManager,
+        sharepointIntegrationManager,
     ];
 
     static integrationTypes = IntegrationManager.integrationManagerClasses.map(
@@ -44,7 +46,7 @@ class IntegrationManager extends Parent {
         const integrationManagerClass =
             IntegrationManager.integrationManagerClasses[
                 integrationManagerIndex
-                ];
+            ];
 
         const instance = await integrationManagerClass.getInstance({
             userId,
