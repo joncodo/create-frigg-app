@@ -1,9 +1,0 @@
-{
-    "name": "sharepoint",
-    "label": "SharePoint",
-    "productUrl": "https://sharepoint.com",
-    "apiDocs": "https://developers.sharepoint.com",
-    "logoUrl": "https://friggframework.org/assets/img/sharepoint.jpeg",
-    "categories": ["Marketing", "Sales", "CMS", "Marketing Automation"],
-    "description": "SharePoint is a MSFT application"
-}

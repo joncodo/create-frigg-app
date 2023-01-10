@@ -2,8 +2,8 @@ const { debug, flushDebugLog } = require('@friggframework/logs');
 const { get } = require('@friggframework/assertions');
 const { ModuleManager } = require('@friggframework/module-plugin');
 const { Api } = require('./api');
-const { Entity } = require('./entity');
-const { Credential } = require('./credential');
+const { Entity } = require('./models/entity');
+const { Credential } = require('./models/credential');
 
 // the name used for the entity type, generally
 const MANAGER_NAME = 'sharepoint';
